@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title lang="en">Mesto</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__logo"
+        alt="Логотип Место Россия"
+        src="./images/logo.svg"
+      />
+    </header>
+    <main>
+        <section class="profile">
+            <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар">
+              <div class="profile__info">
+                <h1 class="profile__name">Жак-Ив Кусто</h1>
+                <button class="profile__edit-button" type="button"></button>
+                <p class="profile__job">Исследователь океана</p>
+              </div>
+              <button class="profile__add-button" type="button" aria-label="Добавить фотографию"></button>
+          </section>
+
+
+
+      </section>
+      <section class="elements">
+        <ul class="elements__list">
+            <li class="elements__item">
+                <img class="elements__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
+                <div class="elements__container">
+                  <h2 class="elements__title">Карачаевск</h2>
+                  <button class="elements__like" type="button"></button>
+                </div>
+              </li>
+              <li class="elements__item">
+                <img class="elements__image" src="./images/elbrus.png" alt="Гора Эльбрус">
+                <div class="elements__container">
+                  <h2 class="elements__title">Гора Эльбрус</h2>
+                  <button class="elements__like" type="button"></button>
+                </div>
+              </li>
+              <li class="elements__item">
+                <img class="elements__image" src="./images/dombai.png" alt="Домбай">
+                <div class="elements__container">
+                  <h2 class="elements__title">Домбай</h2>
+                  <button class="elements__like" type="button"></button>
+                </div>
+              </li>
+              <li class="elements__item">
+                <img class="elements__image" src="./images/elbrus.png" alt="Гора Эльбрус">
+                <div class="elements__container">
+                  <h2 class="elements__title">Гора Эльбрус</h2>
+                  <button class="elements__like" type="button"></button>
+                </div>
+              </li>
+              <li class="elements__item">
+                <img class="elements__image" src="./images/dombai.png" alt="Домбай">
+                <div class="elements__container">
+                  <h2 class="elements__title">Домбай</h2>
+                  <button class="elements__like" type="button"></button>
+                </div>
+              </li>
+              <li class="elements__item">
+                <img class="elements__image" src="./images/karachaevsk.jpg" alt="Карачаевск">
+                <div class="elements__container">
+                  <h2 class="elements__title">Карачаевск</h2>
+                  <button class="elements__like" type="button"></button>
+                </div>
+              </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
+    </footer>
+
+    <div class="popup">
+      <!-- <form class="popup__form">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input
+          class="popup__user-name"
+          type="text"
+          id="popup__user-name"
+          required
+        />
+        <input
+          class="popup__user-work"
+          type="text"
+          id="popup__user-work"
+          required
+        />
+        <button class="popup__submit-button" type="submit">Сохранить</button>
+        <button class="popup__close-button"></button>
+      </form> -->
+    </div>
+    <script src="./pages/index.js"></script>
+  </body>
+</html>
