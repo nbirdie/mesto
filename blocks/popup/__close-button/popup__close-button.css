@@ -6,9 +6,9 @@
   width: 32px;
   height: 32px;
   background-color: transparent;
-  position: relative;
-  top: -40px;
-  right: -438px;
+  position: absolute;
+  top: -38px;
+  right: -38px;
   cursor: pointer;
   border: none;
 }
