@@ -1,4 +1,5 @@
 .page {
+  position: relative;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   padding: 0;
   text-rendering: optimizeLegibility;
