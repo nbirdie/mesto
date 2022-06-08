@@ -19,13 +19,23 @@ function closePopup() {
     popup.classList.add('popup_view_hidden');
 }
 
+function formSubmitHandler(evt) {
+    console.log(1);
+    // evt.preventDefault();
+    // userNameInput.textContent = userName.value;
+    // userJobInput.textContent = userJob.value;
+    // closePopup();
+  }
 
-editButton.addEventListener('click', function () {
+
+editButton.addEventListener("click", function () {
     openPopup();
 })
 
-closeButton.addEventListener('click', function () {
+closeButton.addEventListener("click", function () {
     closePopup();
 })
 
-
+saveButton.addEventListener("submit", function () {
+    formSubmitHandler ();
+})
