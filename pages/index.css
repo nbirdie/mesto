@@ -34,3 +34,4 @@
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__field/_type/popup__field_type_job.css);
 @import url(../blocks/popup/__field/_type/popup__field_type_name.css);
+@import url(../blocks/popup/_view/popup_view_hidden.css);
