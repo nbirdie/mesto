@@ -18,7 +18,7 @@
 
 **Сайт**
 
-*https://nbirdie.github.io/mesto/
+* [Ссылка на сайт](https://nbirdie.github.io/mesto/)
 
 ### Планы доработки проекта
 Расширить возможности JS
