@@ -34,7 +34,7 @@ closeButton.addEventListener("click", function () {
   closePopup();
 });
 
-saveButton.addEventListener("submit", function () {
+saveButton.addEventListener("click", function (event) {
     console.log(2);
-    formSubmitHandler();
+    formSubmitHandler(event);
 });
