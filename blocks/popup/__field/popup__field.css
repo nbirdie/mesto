@@ -2,7 +2,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  outline: none;
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -10,9 +9,16 @@
   line-height: 17px;
   color: #000000;
   border: none;
-  border-bottom: 1px solid #000000;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 358px;
+}
+
+.popup__field:first-child {
+  margin: 0 auto;
+}
+
+.popup__field:nth-child(2) {
+  margin: 30px auto 0;
 }
 
 @media screen and (max-width: 767px) {

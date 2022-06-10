@@ -3,6 +3,7 @@
   margin: 40px auto 51px;
   padding: 0;
   max-width: 880px;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 }
@@ -11,6 +12,6 @@
   .profile {
     max-width: 282px;
     flex-direction: column;
-    margin: 42px 19px 36px;
+    margin: 42px auto 36px;
   }
 }

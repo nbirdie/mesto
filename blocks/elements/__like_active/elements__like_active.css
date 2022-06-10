@@ -1,0 +1,8 @@
+.elements__like_active {
+    background-image: url(../../../images/like_active.svg);
+    transition: opacity 0.3s ease;
+}
+
+.elements__heart_active:hover {
+    opacity: .5;
+  }

@@ -1,10 +1,11 @@
 .elements__list {
   width: 100%;
+  max-width: 880px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
   grid-template-rows: 1fr 1fr;
   grid-gap: 20px 17px;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }

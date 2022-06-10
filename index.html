@@ -17,11 +17,13 @@
     </header>
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар" />
-        <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button"></button>
-          <p class="profile__job">Исследователь океана</p>
+        <div class="profile__main">
+          <img class="profile__avatar" src="./images/avatar.jpg" alt="Аватар" />
+          <div class="profile__info">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+            <p class="profile__job">Исследователь океана</p>
+          </div>
         </div>
         <button
           class="profile__add-button"
@@ -107,7 +109,7 @@
       <div class="popup__content">
         <button class="popup__close-button" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form" name="popup__form">
+        <form class="popup__info-form" name="popup__form">
           <input
             type="text"
             placeholder=""
@@ -118,10 +120,10 @@
             placeholder=""
             class="popup__field popup__field_type_job"
           />
-          <button class="popup__save-button" type="button">Сохранить</button>
+          <button class="popup__save-button" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
-    <script src="./pages/index.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
