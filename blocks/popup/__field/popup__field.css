@@ -2,7 +2,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: "Inter";
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -11,12 +11,13 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 358px;
+  padding: 0 0 13px 0;
 }
 
 .popup__field:first-child {
   margin: 0 auto;
 }
-
+/* Last child по какой-то причине не работает */
 .popup__field:nth-child(2) {
   margin: 30px auto 0;
 }
