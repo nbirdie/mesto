@@ -8,6 +8,7 @@
   flex-direction: column;
   position: relative;
   padding: 0 36px;
+  box-sizing: border-box;
 }
 
 

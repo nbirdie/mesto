@@ -1,5 +1,5 @@
 .elements__like_active {
-    background-image: url(../../../images/like_active.svg);
+    background-image: url(../../../../images/like_active.svg);
     transition: opacity 0.3s ease;
 }
 
