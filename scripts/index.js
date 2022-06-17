@@ -12,6 +12,9 @@ const elLikes = document.querySelectorAll(".elements__like");
 const userNameInput = document.querySelector(".popup__field_type_name");
 const userJobInput = document.querySelector(".popup__field_type_job");
 
+//popup_place_add
+const addPlaceButton = document.querySelector(".profile__add-button")
+
 function openPopup() {
   popup.classList.remove("popup_view_hidden");
   userNameInput.value = userName.textContent;
