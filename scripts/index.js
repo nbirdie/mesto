@@ -37,8 +37,6 @@ const popupInfoForm = document.querySelector(".popup__info-form");
 const userNameInput = document.querySelector(".popup__field_type_name");
 const userJobInput = document.querySelector(".popup__field_type_job");
 
-// для лайка
-const elLikes = document.querySelectorAll(".elements__like");
 
 //для добавления места
 const addPlaceButton = document.querySelector(".profile__add-button");
@@ -62,13 +60,13 @@ const closeButtonPicture = document.querySelector(
 //ФУНКЦИИ
 //info
 function openPopupInfo() {
-  popupInfo.classList.remove("popup_view_hidden");
+  popupInfo.classList.add("popup_opened");
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
 }
 
 function closePopupInfo() {
-  popupInfo.classList.add("popup_view_hidden");
+  popupInfo.classList.remove("popup_opened");
 }
 
 function formSubmitHandlerInfo(evt) {
@@ -79,11 +77,11 @@ function formSubmitHandlerInfo(evt) {
 }
 //add-place
 function openPopupAdd() {
-  popupAdd.classList.remove("popup_view_hidden");
+  popupAdd.classList.add("popup_opened");
 }
 
 function closePopupAdd() {
-  popupAdd.classList.add("popup_view_hidden");
+  popupAdd.classList.remove("popup_opened");
 }
 
 function likeButton(event) {
@@ -95,7 +93,7 @@ function deleteItem(event) {
 }
 //открытие картинок
 function openPicture(link, title) {
-  popupPicture.classList.remove("popup_view_hidden");
+  popupPicture.classList.add("popup_opened");
   popupPictureLink.src = link;
   popupPictureTitle.innerText = title;
 }
@@ -129,7 +127,7 @@ function createItem(e) {
 }
 
 function closePopupPicture() {
-  popupPicture.classList.add("popup_view_hidden");
+  popupPicture.classList.remove("popup_opened");
 }
 
 //ОБРАБОТЧИКИ
