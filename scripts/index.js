@@ -55,7 +55,9 @@ const placeLinkInput = document.querySelector(".popup__field_type_link");
 const popupPicture = document.querySelector(".popup_place_open-picture");
 const popupPictureLink = document.querySelector(".popup__picture");
 const popupPictureTitle = document.querySelector(".popup__title-picture");
-const closeButtonPicture = document.querySelector(".popup__close-button_place_open-picture");
+const closeButtonPicture = document.querySelector(
+  ".popup__close-button_place_open-picture"
+);
 
 //ФУНКЦИИ
 //info
@@ -117,16 +119,16 @@ function renderItem(name, link) {
   });
 
   elList.prepend(newElement);
-
-  closePopupAdd();
 }
 
 function createItem(e) {
   e.preventDefault();
   renderItem(placeTitleInput.value, placeLinkInput.value);
+  e.target.reset();
+  closePopupAdd();
 }
 
-function closePopupPicture () {
+function closePopupPicture() {
   popupPicture.classList.add("popup_view_hidden");
 }
 
@@ -151,5 +153,5 @@ initialCards.forEach((item) => {
   renderItem(item.name, item.link);
 });
 
-//для открытия фото
-closeButtonPicture.addEventListener('click', closePopupPicture);
+//для закрытия фото
+closeButtonPicture.addEventListener("click", closePopupPicture);
