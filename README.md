@@ -3,7 +3,7 @@
 ### Описание
 
 Адаптивный одностраничный сайт-портфолио, созданный по макету Figma. 
-Спринт 4-5 Яндекс Практикума
+Спринт 4-6 Яндекс Практикума
 
 ### Технологии
 
@@ -17,6 +17,7 @@
 
 * [Ссылка на макет в Figma Спринт 4](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 * [Ссылна на макет в Figma Спринт 5](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=50160%3A172)
+* [Ссылна на макет в Figma Спринт 6](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1)
 
 **Сайт**
 
