@@ -59,7 +59,15 @@ const closeButtonPicture = document.querySelector(
 //переменная кнопки попапа для редактирования профиля
 const buttonElementInfo = popupInfoForm.querySelector(".popup__save-button");
 const buttonElementPlace = popupAddForm.querySelector(".popup__save-button");
-const classSet = { inactiveButtonClass: "popup__save-button_disabled" };
+
+const classSet = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__field",
+  submitButtonSelector: ".popup__save-button",
+  inactiveButtonClass: "popup__save-button_disabled",
+  inputErrorClass: "popup__field_type_error",
+  errorClass: "popup__field-error_visible",
+};
 
 //ФУНКЦИИ
 function closePopupByEsc(evt) {
@@ -154,14 +162,7 @@ function createItem(e) {
   closePopup(popupAdd);
 }
 
-enableValidation({
-  formSelector: ".popup__form",
-  inputSelector: ".popup__field",
-  submitButtonSelector: ".popup__save-button",
-  inactiveButtonClass: "popup__save-button_disabled",
-  inputErrorClass: "popup__field_type_error",
-  errorClass: "popup__field-error_visible",
-});
+enableValidation(classSet);
 
 //ОБРАБОТЧИКИ
 //info
