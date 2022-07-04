@@ -69,11 +69,3 @@ function enableValidation(classSet) {
   });
 }
 
-enableValidation({
-  formSelector: ".popup__form",
-  inputSelector: ".popup__field",
-  submitButtonSelector: ".popup__save-button",
-  inactiveButtonClass: "popup__save-button_disabled",
-  inputErrorClass: "popup__field_type_error",
-  errorClass: "popup__field-error_visible",
-});
