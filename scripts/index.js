@@ -33,7 +33,7 @@ const closeInfoButton = document.querySelector(
 const popupInfo = document.querySelector(".popup_place_info");
 const userName = document.querySelector(".profile__name");
 const userJob = document.querySelector(".profile__job");
-const popupInfoForm = document.querySelector(".popup__info-form");
+const popupInfoForm = document.querySelector(".popup__form_type_info-form");
 
 const userNameInput = document.querySelector(".popup__field_type_name");
 const userJobInput = document.querySelector(".popup__field_type_job");
@@ -46,7 +46,7 @@ const closePlaceButton = document.querySelector(
 const popupAdd = document.querySelector(".popup_place_add-picture");
 const itemTemplate = document.querySelector(".elements-template").content;
 const elList = document.querySelector(".elements__list");
-const popupAddForm = document.querySelector(".popup__add-form");
+const popupAddForm = document.querySelector(".popup__form_type_add-form");
 const placeTitleInput = document.querySelector(".popup__field_type_title");
 const placeLinkInput = document.querySelector(".popup__field_type_link");
 //для открытия фотографии
@@ -56,14 +56,33 @@ const popupPictureTitle = document.querySelector(".popup__title-picture");
 const closeButtonPicture = document.querySelector(
   ".popup__close-button_place_open-picture"
 );
+//переменная кнопки попапа для редактирования профиля
+const buttonElement = popupInfoForm.querySelector(".popup__save-button");
+const classSet = {inactiveButtonClass: "popup__save-button_disabled"}
 
 //ФУНКЦИИ
+function closePopupByEsc(evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+}
+
+function closePopupByClick(evt) {
+  if (evt.target.classList.contains("popup_opened")) {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+}
+
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener('keydown', closePopupByEsc);
+  popup.addEventListener('click', closePopupByClick);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener('keydown', closePopupByEsc);
+  popup.removeEventListener('click', closePopupByClick);
 }
 
 //info
@@ -71,6 +90,7 @@ function editPopupInfo() {
   openPopup(popupInfo);
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
+  toggleButtonState([userNameInput, userJobInput], buttonElement, classSet)
 }
 
 function submitFormHandlerInfo(evt) {

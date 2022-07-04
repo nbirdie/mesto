@@ -46,19 +46,27 @@
           type="button"
         ></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__info-form" name="popup__info-form">
+        <form class="popup__form popup__form_type_info-form" name="popup__info-form" novalidate>
           <input
             type="text"
             placeholder=""
+            minlength="2"
+            maxlength="40"
             class="popup__field popup__field_type_name"
             name="user-name"
+            required
           />
+          <span class="popup__field-error user-name-error"></span>
           <input
             type="text"
             placeholder=""
             class="popup__field popup__field_type_job"
             name="user-job"
+            minlength="2"
+            maxlength="200"
+            required
           />
+          <span class="popup__field-error user-job-error"></span>
           <button class="popup__save-button" type="submit">Сохранить</button>
         </form>
       </div>
@@ -71,19 +79,25 @@
           type="button"
         ></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__add-form" name="popup__place-form">
+        <form class="popup__form popup__form_type_add-form" name="popup__place-form" novalidate>
           <input
             type="text"
             class="popup__field popup__field_type_title"
             name="place-title"
             placeholder="Название"
+            minlength="2"
+            maxlength="30"
+            required
           />
+          <span class="popup__field-error place-title-error"></span>
           <input
-            type="text"
+            type="url"
             class="popup__field popup__field_type_link"
             name="place-link"
             placeholder="Ссылка на картинку"
+            required
           />
+          <span class="popup__field-error place-link-error"></span>
           <button class="popup__save-button" type="submit">Создать</button>
         </form>
       </div>
@@ -111,5 +125,6 @@
       </li>
     </template>
     <script src="scripts/index.js" type="text/javascript"></script>
+    <script src="scripts/validate.js" type="text/javascript"></script>
   </body>
 </html>
