@@ -57,7 +57,8 @@ const closeButtonPicture = document.querySelector(
   ".popup__close-button_place_open-picture"
 );
 //переменная кнопки попапа для редактирования профиля
-const buttonElement = popupInfoForm.querySelector(".popup__save-button");
+const buttonElementInfo = popupInfoForm.querySelector(".popup__save-button");
+const buttonElementPlace = popupAddForm.querySelector(".popup__save-button");
 const classSet = {inactiveButtonClass: "popup__save-button_disabled"}
 
 //ФУНКЦИИ
@@ -90,7 +91,7 @@ function editPopupInfo() {
   openPopup(popupInfo);
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
-  toggleButtonState([userNameInput, userJobInput], buttonElement, classSet)
+  toggleButtonState([userNameInput, userJobInput], buttonElementInfo, classSet)
 }
 
 function submitFormHandlerInfo(evt) {
@@ -145,6 +146,7 @@ function createItem(e) {
   e.preventDefault();
   renderItem(placeTitleInput.value, placeLinkInput.value);
   e.target.reset();
+  toggleButtonState([placeTitleInput, placeLinkInput], buttonElementPlace, classSet);
   closePopup(popupAdd);
 }
 
