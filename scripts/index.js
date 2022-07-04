@@ -59,11 +59,11 @@ const closeButtonPicture = document.querySelector(
 //переменная кнопки попапа для редактирования профиля
 const buttonElementInfo = popupInfoForm.querySelector(".popup__save-button");
 const buttonElementPlace = popupAddForm.querySelector(".popup__save-button");
-const classSet = {inactiveButtonClass: "popup__save-button_disabled"}
+const classSet = { inactiveButtonClass: "popup__save-button_disabled" };
 
 //ФУНКЦИИ
 function closePopupByEsc(evt) {
-  if (evt.key === 'Escape') {
+  if (evt.key === "Escape") {
     closePopup(document.querySelector(".popup_opened"));
   }
 }
@@ -76,14 +76,14 @@ function closePopupByClick(evt) {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  document.addEventListener('keydown', closePopupByEsc);
-  popup.addEventListener('click', closePopupByClick);
+  document.addEventListener("keydown", closePopupByEsc);
+  popup.addEventListener("click", closePopupByClick);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
-  document.removeEventListener('keydown', closePopupByEsc);
-  popup.removeEventListener('click', closePopupByClick);
+  document.removeEventListener("keydown", closePopupByEsc);
+  popup.removeEventListener("click", closePopupByClick);
 }
 
 //info
@@ -91,7 +91,7 @@ function editPopupInfo() {
   openPopup(popupInfo);
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
-  toggleButtonState([userNameInput, userJobInput], buttonElementInfo, classSet)
+  toggleButtonState([userNameInput, userJobInput], buttonElementInfo, classSet);
 }
 
 function submitFormHandlerInfo(evt) {
@@ -146,7 +146,11 @@ function createItem(e) {
   e.preventDefault();
   renderItem(placeTitleInput.value, placeLinkInput.value);
   e.target.reset();
-  toggleButtonState([placeTitleInput, placeLinkInput], buttonElementPlace, classSet);
+  toggleButtonState(
+    [placeTitleInput, placeLinkInput],
+    buttonElementPlace,
+    classSet
+  );
   closePopup(popupAdd);
 }
 
@@ -158,7 +162,6 @@ enableValidation({
   inputErrorClass: "popup__field_type_error",
   errorClass: "popup__field-error_visible",
 });
-
 
 //ОБРАБОТЧИКИ
 //info
