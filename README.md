@@ -13,7 +13,9 @@
 * открытия, закрытия popup для добавления, удаления, лайка фотографий
 * открытия полномасштабной версии фотографии при нажатии
 
-
+### Инструкция
+Открыть сайт через любой браузер
+* [Ссылка на сайт](https://nbirdie.github.io/mesto/)
 
 
 ### Технологии
@@ -31,9 +33,7 @@
 * [Ссылна на макет в Figma Спринт 5](https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=50160%3A172)
 * [Ссылна на макет в Figma Спринт 6](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1)
 
-### Инструкция
-Открыть сайт через любой браузер
-* [Ссылка на сайт](https://nbirdie.github.io/mesto/)
+
 
 ### Планы доработки проекта
 Расширить возможности JS
