@@ -1,3 +1,6 @@
+import { Card } from "./Card.js";
+import { FormValidator } from "./FormValidator.js";
+
 const initialCards = [
   {
     name: "Архыз",
@@ -124,45 +127,26 @@ function openPicture(link, title) {
   popupPictureTitle.innerText = title;
 }
 
-function createCard(name, link) {
-  const cardElement = itemTemplate.cloneNode(true);
-  cardElement.querySelector(".elements__title").innerText = name;
-  const elImage = cardElement.querySelector(".elements__image");
-  elImage.src = link;
-  elImage.alt = name;
-  //вешаем событие, лайк фотографии
-  cardElement
-    .querySelector(".elements__like")
-    .addEventListener("click", toggleLikeButton);
-  //вешаем событие, клик на корзину для удаления
-  cardElement
-    .querySelector(".elements__delete-button")
-    .addEventListener("click", deleteItem);
-  //вешаем событие, клик на картинку для открытия
-  elImage.addEventListener("click", function () {
-    openPicture(link, name);
-  });
-  return cardElement;
-}
-
-function renderItem(name, link) {
-  const newElement = createCard(name, link);
-  elList.prepend(newElement);
-}
-
-function createItem(e) {
-  e.preventDefault();
-  renderItem(placeTitleInput.value, placeLinkInput.value);
-  e.target.reset();
-  toggleButtonState(
-    [placeTitleInput, placeLinkInput],
-    buttonElementPlace,
-    classSet
+function createItem(evt) {
+  evt.preventDefault();
+  const newCard = {};
+  newCard.name = placeTitleInput.value;
+  newCard.link = placeLinkInput.value;
+  const card = new Card(
+    newCard,
+    ".elements-template",
+    openPopup,
+    popupPicture,
+    popupPictureLink,
+    popupPictureTitle
   );
+  const cardElement = card.createCard();
+  document.querySelector(".elements__list").prepend(cardElement);
+  evt.target.reset();
   closePopup(popupAdd);
 }
 
-enableValidation(classSet);
+//enableValidation(classSet);
 
 //ОБРАБОТЧИКИ
 //info
@@ -181,9 +165,19 @@ addPlaceButton.addEventListener("click", () => openPopup(popupAdd));
 closePlaceButton.addEventListener("click", () => closePopup(popupAdd));
 popupAddForm.addEventListener("submit", createItem);
 
-initialCards.forEach((item) => {
-  renderItem(item.name, item.link);
-});
 
 //для закрытия фото
 closeButtonPicture.addEventListener("click", () => closePopup(popupPicture));
+
+initialCards.forEach((item) => {
+  const card = new Card(
+    item,
+    ".elements-template",
+    openPopup,
+    popupPicture,
+    popupPictureLink,
+    popupPictureTitle
+  );
+  const cardElement = card.createCard();
+  document.querySelector(".elements__list").prepend(cardElement);
+});
