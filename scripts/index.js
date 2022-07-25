@@ -72,6 +72,14 @@ const classSet = {
   errorClass: "popup__field-error_visible",
 };
 
+const forms = Array.from(document.querySelectorAll(".popup__form"));
+
+//влючаем валидацию всех форм на странице
+forms.forEach((form) => {
+  const forma = new FormValidator(form, classSet);
+  forma.enableValidation();
+});
+
 //ФУНКЦИИ
 function closePopupByEsc(evt) {
   if (evt.key === "Escape") {
@@ -102,7 +110,8 @@ function editPopupInfo() {
   openPopup(popupInfo);
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
-  toggleButtonState([userNameInput, userJobInput], buttonElementInfo, classSet);
+  const form = new FormValidator(popupInfo, classSet);
+  form.enableValidation();
 }
 
 function submitFormHandlerInfo(evt) {
@@ -143,6 +152,8 @@ function createItem(evt) {
   const cardElement = card.createCard();
   document.querySelector(".elements__list").prepend(cardElement);
   evt.target.reset();
+  const form = new FormValidator(popupAdd, classSet);
+  form.enableValidation();
   closePopup(popupAdd);
 }
 
@@ -164,7 +175,6 @@ popupInfoForm.addEventListener("submit", function (event) {
 addPlaceButton.addEventListener("click", () => openPopup(popupAdd));
 closePlaceButton.addEventListener("click", () => closePopup(popupAdd));
 popupAddForm.addEventListener("submit", createItem);
-
 
 //для закрытия фото
 closeButtonPicture.addEventListener("click", () => closePopup(popupPicture));
