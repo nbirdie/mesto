@@ -69,6 +69,14 @@ const validationConfig = {
 
 const forms = Array.from(document.querySelectorAll(".popup__form"));
 
+//влючаем валидацию всех форм на странице
+
+const formAdd = new FormValidator(popupAdd, validationConfig);
+formAdd.enableValidation();
+
+const formInfo = new FormValidator(popupInfo, validationConfig);
+formInfo.enableValidation();
+
 //ФУНКЦИИ
 function closePopupByEsc(evt) {
   if (evt.key === "Escape") {
@@ -97,6 +105,7 @@ function closePopup(popup) {
 //info
 function editPopupInfo() {
   openPopup(popupInfo);
+  formInfo.activateButtonSate();
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
 }
@@ -124,11 +133,7 @@ function openPicture(link, title) {
 }
 
 function createCards(item) {
-  const card = new Card(
-    item,
-    ".elements-template",
-    openPicture,
-  );
+  const card = new Card(item, ".elements-template", openPicture);
   const cardElement = card.createCard();
 
   document.querySelector(".elements__list").prepend(cardElement);
@@ -141,6 +146,7 @@ function handleAddCardFormSubmit(evt) {
   newCard.link = placeLinkInput.value;
   createCards(newCard);
   evt.target.reset();
+  formAdd.deactivateButtonState();
   closePopup(popupAdd);
 }
 
@@ -166,10 +172,4 @@ closeButtonPicture.addEventListener("click", () => closePopup(popupPicture));
 
 initialCards.forEach((item) => {
   createCards(item);
-});
-
-//влючаем валидацию всех форм на странице
-forms.forEach((form) => {
-  const formElement = new FormValidator(form, validationConfig);
-  formElement.enableValidation();
 });

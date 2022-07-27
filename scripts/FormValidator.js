@@ -44,6 +44,16 @@ export class FormValidator {
     }
   }
 
+  activateButtonSate() {
+    this._buttonElement.removeAttribute("disabled");
+    this._buttonElement.classList.remove(this._classSet.inactiveButtonClass);
+  }
+
+  deactivateButtonState() {
+    this._buttonElement.setAttribute("disabled", true);
+    this._buttonElement.classList.add(this._classSet.inactiveButtonClass);
+  }
+
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);

@@ -42,7 +42,8 @@ export class Card {
     this._delete.addEventListener("click", () => {
       this._handleDeleteClick();
     });
-    this._image.addEventListener("click", () => {this._openPicture(this._link, this._name)});
+    this._image.addEventListener("click", () => {
+      this._openPicture(this._link, this._name);
+    });
   }
 }
-
