@@ -104,10 +104,10 @@ function closePopup(popup) {
 
 //info
 function editPopupInfo() {
-  openPopup(popupInfo);
   formInfo.activateButtonSate();
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
+  openPopup(popupInfo);
 }
 
 function handleEditProfileFormSubmit(evt) {
@@ -117,13 +117,6 @@ function handleEditProfileFormSubmit(evt) {
   closePopup(popupInfo);
 }
 
-function toggleLikeButton(event) {
-  event.target.classList.toggle("elements__like_active");
-}
-
-function deleteItem(event) {
-  event.target.closest(".elements__item").remove();
-}
 //открытие картинок
 function openPicture(link, title) {
   popupPictureLink.src = link;
