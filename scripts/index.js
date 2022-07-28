@@ -67,15 +67,15 @@ const validationConfig = {
   errorClass: "popup__field-error_visible",
 };
 
-const forms = Array.from(document.querySelectorAll(".popup__form"));
+const elementsList = document.querySelector(".elements__list");
 
 //влючаем валидацию всех форм на странице
 
-const formAdd = new FormValidator(popupAdd, validationConfig);
-formAdd.enableValidation();
+const formAddCardValidator = new FormValidator(popupAdd, validationConfig);
+formAddCardValidator.enableValidation();
 
-const formInfo = new FormValidator(popupInfo, validationConfig);
-formInfo.enableValidation();
+const formEditProfileValidator = new FormValidator(popupInfo, validationConfig);
+formEditProfileValidator.enableValidation();
 
 //ФУНКЦИИ
 function closePopupByEsc(evt) {
@@ -104,7 +104,7 @@ function closePopup(popup) {
 
 //info
 function editPopupInfo() {
-  formInfo.activateButtonSate();
+  formEditProfileValidator.activateButtonSate();
   userNameInput.value = userName.textContent;
   userJobInput.value = userJob.textContent;
   openPopup(popupInfo);
@@ -125,11 +125,11 @@ function openPicture(link, title) {
   openPopup(popupPicture);
 }
 
-function createCards(item) {
-  const card = new Card(item, ".elements-template", openPicture);
+function createCard(cardData) {
+  const card = new Card(cardData, ".elements-template", openPicture);
   const cardElement = card.createCard();
 
-  document.querySelector(".elements__list").prepend(cardElement);
+  elementsList.prepend(cardElement);
 }
 
 function handleAddCardFormSubmit(evt) {
@@ -137,9 +137,9 @@ function handleAddCardFormSubmit(evt) {
   const newCard = {};
   newCard.name = placeTitleInput.value;
   newCard.link = placeLinkInput.value;
-  createCards(newCard);
+  createCard(newCard);
   evt.target.reset();
-  formAdd.deactivateButtonState();
+  formAddCardValidator.deactivateButtonState();
   closePopup(popupAdd);
 }
 
@@ -163,6 +163,6 @@ popupAddForm.addEventListener("submit", handleAddCardFormSubmit);
 //для закрытия фото
 closeButtonPicture.addEventListener("click", () => closePopup(popupPicture));
 
-initialCards.forEach((item) => {
-  createCards(item);
+initialCards.forEach((cardData) => {
+  createCard(cardData);
 });
